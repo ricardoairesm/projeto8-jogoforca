@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import palavras from "./palavras";
 
 
+
+
 export default function Jogo(props) {
 
-    const { forca, palavra, functionPalavra, functionPalavraArray, soletrada, functionSoletrada, functionMudarEstilo, vitoria} = props;
+    const { forca, palavra, functionPalavra, functionPalavraArray, soletrada, functionSoletrada, functionMudarEstilo, vitoria, functionContador, functionAcertos, functionForca, functionVitoria} = props;
     
     function escolherPalavra() {
         let novoArray = [];
         let novoSoletrada = [];
+        functionContador(0);
+        functionAcertos(0);
+        functionForca("./assets/forca0.png");
+        functionVitoria("preto");
+        functionSoletrada([]);
+        functionMudarEstilo("caixinhaLetrasJogo");
         
 
         const randomIndex = Math.floor(Math.random() * palavras.length);
@@ -26,7 +34,7 @@ export default function Jogo(props) {
         functionSoletrada(novoSoletrada);
         console.log(novoSoletrada);
 
-        functionMudarEstilo("caixinhaLetrasJogo");
+        
 
     }
 

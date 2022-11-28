@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+
+
 export default function Chute(props) {
-    const { palavra, functionSoletrada, functionVitoria, palavraArray, functionForca, functionMudarEstilo, estiloInicial } = props;
+    const { palavra, functionSoletrada, functionVitoria, palavraArray, functionForca, functionMudarEstilo, estiloInicial, functionContador, functionAcertos } = props;
     const [chute, setChute] = useState("");
 
     function testarChute() {
@@ -9,12 +11,16 @@ export default function Chute(props) {
                 functionVitoria("verde");
                 functionSoletrada(palavraArray);
                 functionMudarEstilo("caixinhaLetrasInicial");
+                functionContador(0);
+                functionAcertos(0); 
             }
             else {
                 functionVitoria("vermelho");
                 functionSoletrada(palavraArray);
                 functionForca("./assets/forca6.png");
                 functionMudarEstilo("caixinhaLetrasInicial");
+                functionContador(0);
+                functionAcertos(0);
             }
             setChute("");
         }

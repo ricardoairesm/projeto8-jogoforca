@@ -18,8 +18,10 @@ export default function App(props) {
     const [soletrada, setSoletrada] = useState([]);
     const [palavraArray, setPalavraArray] = useState([]);
     const [estiloInicial, setEstiloInicial] = useState("caixinhaLetrasInicial");
-    const [vitoria, setVitoria] = useState('black');
-    const [estadoBotao, setEstadoBotao] = useState();
+    const [vitoria, setVitoria] = useState('preto');
+    const [contador, setContador] = useState(0);
+    let [acertos, setAcertos] = useState(0);
+    
 
 
 
@@ -35,6 +37,10 @@ export default function App(props) {
                     functionSoletrada={setSoletrada}
                     functionMudarEstilo={setEstiloInicial}
                     vitoria={vitoria} 
+                    functionContador = {setContador}
+                    functionAcertos = {setAcertos}
+                    functionForca = {setEstadoForca}
+                    functionVitoria = {setVitoria}
                 />
                 <Letras
                     forca={estadoForca}
@@ -46,6 +52,10 @@ export default function App(props) {
                     estiloInicial={estiloInicial}
                     functionMudarEstilo={setEstiloInicial}
                     functionVitoria={setVitoria}
+                    functionContador = {setContador}
+                    functionAcertos = {setAcertos}
+                    contador = {contador}
+                    acertos = {acertos}
                     
                 />
                 <Chute
@@ -56,6 +66,8 @@ export default function App(props) {
                     functionForca={setEstadoForca}
                     functionMudarEstilo={setEstiloInicial}
                     estiloInicial={estiloInicial}
+                    functionContador = {setContador}
+                    functionAcertos = {setAcertos}
                 />
 
             </div>
