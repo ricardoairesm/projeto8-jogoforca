@@ -50,7 +50,7 @@ img {
     width: 684px;
 }
 
-.caixinhaLetras {
+.caixinhaLetrasInicial {
     height: 40px;
     width: 40px;
     border-radius: 3px;
@@ -66,6 +66,78 @@ img {
     color: #9FAAB5;
     margin-right: 12px;
     margin-bottom: 12px;
+
+}
+
+.chutar {
+    position: absolute;
+    top: 743px;
+    left: 755px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3C76A1;
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+}
+
+.preto {
+    color: black;
+}
+
+.verde {
+    color: green;
+}
+
+.vermelho {
+    color: red;
+}
+
+.soletrada {
+    position: absolute;
+    top: 431px;
+    left: 641px;
+    font-family: 'Noto Sans', sans-serif;
+    width: 323px;
+    height: 68px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.cadaLetra {
+    margin-right: 12px;
+}
+
+.caixinhaLetrasJogo {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    background-color: #E1ECF4;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7AA7C7;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #7AA7C7;
 }
 
 input {
@@ -74,6 +146,9 @@ input {
     width: 353px;
     left: 387px;
     top: 743px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
 }
 
@@ -85,7 +160,7 @@ input {
     letter-spacing: 0em;
     text-align: center;
     position: absolute;
-    left:231px;
+    left: 231px;
     top: 751px;
 
 }
