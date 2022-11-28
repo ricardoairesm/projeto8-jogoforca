@@ -8,9 +8,9 @@ let b = 0;
 
 
 export default function Letras(props) {
- 
 
     function testarLetra(e) {
+        
         if (contador < 6) {
             if (e.target.className == "caixinhaLetrasJogo") {
                 if (palavraArray.includes(alfabeto[e.target.id])) {
@@ -29,7 +29,6 @@ export default function Letras(props) {
                     b = contador + 1;
                     functionContador(b);
                     functionForca(`./assets/forca${b}.png`);
-                    console.log(b);
                     e.target.className = "caixinhaLetrasInicial";
                     e.target.onClick = "";
                 }
@@ -40,8 +39,8 @@ export default function Letras(props) {
                     functionMudarEstilo("caixinhaLetrasInicial");
                     functionContador(0);
                     functionAcertos(0);
-                    a = 0;
-                    b = 0;
+                    functionNewGame(false);
+                   
                 }
 
                 if (a == soletrada.length) {
@@ -49,21 +48,24 @@ export default function Letras(props) {
                     functionMudarEstilo("caixinhaLetrasInicial");
                     functionContador(0);
                     functionAcertos(0);
-                    a = 0;
-                    b = 0;
+                    functionNewGame(false);
+                  
                 }
             }
         }
-        
+      
     }
 
 
 
 
-    const { forca, functionForca, palavra, palavraArray, soletrada, functionSoletrada, estiloInicial, functionMudarEstilo, functionVitoria, functionContador, functionAcertos, contador, acertos } = props;
+    const { forca, functionForca, palavra, palavraArray, soletrada, functionSoletrada, estiloInicial, functionMudarEstilo, functionVitoria, functionContador, functionAcertos, contador, acertos, newGame, functionNewGame } = props;
     let letrasTrocadas = [...soletrada];
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    
+    if (newGame == false) {
+        a = 0;
+        b = 0;
+    }
 
     return (
 

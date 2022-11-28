@@ -6,7 +6,7 @@ import palavras from "./palavras";
 
 export default function Jogo(props) {
 
-    const { forca, palavra, functionPalavra, functionPalavraArray, soletrada, functionSoletrada, functionMudarEstilo, vitoria, functionContador, functionAcertos, functionForca, functionVitoria} = props;
+    const { forca, palavra, functionPalavra, functionPalavraArray, soletrada, functionSoletrada, functionMudarEstilo, vitoria, functionContador, functionAcertos, functionForca, functionVitoria , functionNewGame} = props;
     
     function escolherPalavra() {
         let novoArray = [];
@@ -16,26 +16,32 @@ export default function Jogo(props) {
         functionForca("./assets/forca0.png");
         functionVitoria("preto");
         functionSoletrada([]);
-        functionMudarEstilo("caixinhaLetrasJogo");
+        functionMudarEstilo("caixinhaLetrasInicial");
+        setTimeout(() => {
+            functionMudarEstilo("caixinhaLetrasJogo")
+          }, 500);
+        functionNewGame(false);
+        setTimeout(() => {
+            functionNewGame(true)
+          }, 500);
+        
         
 
         const randomIndex = Math.floor(Math.random() * palavras.length);
         let palavraEscolhida = palavras[randomIndex];
         functionPalavra(palavraEscolhida);
-        console.log(palavraEscolhida);
+        
         for (let i = 0; i < palavraEscolhida.length; i++) {
             novoArray = [...novoArray, palavraEscolhida[i]];
         }
         functionPalavraArray(novoArray);
-        console.log(novoArray);
+       
         for (let i = 0; i < palavraEscolhida.length; i++) {
             novoSoletrada = [...novoSoletrada, "_"];
         }
         functionSoletrada(novoSoletrada);
-        console.log(novoSoletrada);
-
         
-
+      
     }
 
 

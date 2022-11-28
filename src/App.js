@@ -9,9 +9,9 @@ import React, { useState } from "react";
 
 
 export default function App(props) {
-    
- 
-    
+
+
+
 
     const [estadoForca, setEstadoForca] = useState("./assets/forca0.png");
     const [palavraEscolhida, setPalavraEscolhida] = useState("");
@@ -20,9 +20,14 @@ export default function App(props) {
     const [estiloInicial, setEstiloInicial] = useState("caixinhaLetrasInicial");
     const [vitoria, setVitoria] = useState('preto');
     const [contador, setContador] = useState(0);
-    let [acertos, setAcertos] = useState(0);
-    
+    const [acertos, setAcertos] = useState(0);
+    const [newGame, setNewGame] = useState(true);
 
+    function mudarAcertos(n) {
+
+        setAcertos(n);
+
+    }
 
 
     return (
@@ -36,11 +41,14 @@ export default function App(props) {
                     soletrada={soletrada}
                     functionSoletrada={setSoletrada}
                     functionMudarEstilo={setEstiloInicial}
-                    vitoria={vitoria} 
-                    functionContador = {setContador}
-                    functionAcertos = {setAcertos}
-                    functionForca = {setEstadoForca}
-                    functionVitoria = {setVitoria}
+                    vitoria={vitoria}
+                    functionContador={setContador}
+                    functionAcertos={setAcertos}
+                    functionForca={setEstadoForca}
+                    functionVitoria={setVitoria}
+                    functionNewGame = {setNewGame}
+           
+                    
                 />
                 <Letras
                     forca={estadoForca}
@@ -52,11 +60,14 @@ export default function App(props) {
                     estiloInicial={estiloInicial}
                     functionMudarEstilo={setEstiloInicial}
                     functionVitoria={setVitoria}
-                    functionContador = {setContador}
-                    functionAcertos = {setAcertos}
-                    contador = {contador}
-                    acertos = {acertos}
-                    
+                    functionContador={setContador}
+                    functionAcertos={mudarAcertos}
+                    contador={contador}
+                    acertos={acertos}
+                    newGame = {newGame}
+                    functionNewGame = {setNewGame}
+                
+
                 />
                 <Chute
                     palavra={palavraEscolhida}
@@ -66,8 +77,9 @@ export default function App(props) {
                     functionForca={setEstadoForca}
                     functionMudarEstilo={setEstiloInicial}
                     estiloInicial={estiloInicial}
-                    functionContador = {setContador}
-                    functionAcertos = {setAcertos}
+                    functionContador={setContador}
+                    functionAcertos={setAcertos}
+                    functionNewGame = {setNewGame}
                 />
 
             </div>
